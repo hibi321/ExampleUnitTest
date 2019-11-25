@@ -8,6 +8,7 @@ package jp.ac.uryukyu.ie.e195710;
  *  boolean dead; //敵の生死状態。true=死亡。
  * Created by tnal on 2016/11/13.
  */
+
 public class Enemy {
     String name;
     int hitPoint;
@@ -47,8 +48,14 @@ public class Enemy {
      */
     public void attack(Hero hero){
         int damage = (int)(Math.random() * attack);
-        System.out.printf("%sの攻撃！%sに%dのダメージを与えた！！\n", name, hero.getName(), damage);
-        hero.wounded(damage);
+        if(dead == false) {
+            System.out.printf("%sの攻撃！%sに%dのダメージを与えた！！\n", name, hero.getName(), damage);
+            hero.wounded(damage);
+
+
+       }
+
+
     }
 
     /**
