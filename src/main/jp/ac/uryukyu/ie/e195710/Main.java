@@ -8,8 +8,6 @@ public class Main {
         LivingThing hero = new Hero("勇者", 10, 5);
         LivingThing enemy = new Enemy("スライム", 6, 3);
 
-        hero.teki = enemy.name;
-        enemy.teki = hero.name;
 
         System.out.printf("%s vs. %s\n", hero.getName(), enemy.getName());
 
