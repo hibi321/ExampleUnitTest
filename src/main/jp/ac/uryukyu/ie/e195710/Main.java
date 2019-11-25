@@ -5,8 +5,11 @@ package jp.ac.uryukyu.ie.e195710;
  */
 public class Main {
     public static void main(String[] args){
-        Hero hero = new Hero("勇者", 10, 5);
-        Enemy enemy = new Enemy("スライム", 6, 3);
+        LivingThing hero = new Hero("勇者", 10, 5);
+        LivingThing enemy = new Enemy("スライム", 6, 3);
+
+        hero.teki = enemy.name;
+        enemy.teki = hero.name;
 
         System.out.printf("%s vs. %s\n", hero.getName(), enemy.getName());
 
@@ -14,8 +17,8 @@ public class Main {
         while( hero.isDead() == false && enemy.isDead() == false ){
             turn++;
             System.out.printf("%dターン目開始！\n", turn);
-            hero.attack(enemy);
-            enemy.attack(hero);
+            hero.attack(enemy.name);
+            enemy.attack(hero.name);
         }
         System.out.println("戦闘終了");
     }
